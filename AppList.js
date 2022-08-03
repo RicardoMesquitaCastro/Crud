@@ -7,8 +7,8 @@ import Database from './Database';
 export default function AppList({route,navigation}) {
     const [items, setItems] = useState([]);
   
-  useEffect(() => {
-      Database.getItems().then(items => setItems(items));
+  useEffect(() => { //rá ser disparado toda vez que a variável route seja alterada, ou seja, toda vez que entrar nesta tela vindo de outra.
+      Database.getItems().then(items => setItems(items)); //
   }, [route]);                                              //CRUD = R
   return (
     <View style={styles.container}>
@@ -17,7 +17,7 @@ export default function AppList({route,navigation}) {
     <ScrollView 
         style={styles.scrollContainer}
         contentContainerStyle={styles.itemsContainer}>
-        { items.map(item => {
+        { items.map(item => { //passando propriedades dos intens do array armazenado no estado
             return <AppItem key={item.id} id={item.id} item={item.quantidade + '  de ' + item.descricao} navigation={navigation} />
         }) }
     </ScrollView>

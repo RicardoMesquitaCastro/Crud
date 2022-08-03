@@ -5,12 +5,13 @@ import { Feather as Icon } from '@expo/vector-icons';
 
 export default function AppItem(props){
 
-    async function handleEditPress(){ 
+    async function handleEditPress(){ // pega o item com o id que foi passado na propriedade id do AppItem e retornando o item que queremos (buscando por id) e enviando ele para o AppForm na navegação de tela.
         const item = await Database.getItem(props.id);
         props.navigation.navigate("AppForm", item);
     }
 
     function handleDeletePress(){ 
+//pega todos os itens, procura o índice daquele que possui o id recebido por parâmetro, exclui esse elemento do array e salva tudo de novo.
         Alert.alert(
             "Atenção",
             "Você tem certeza que deseja excluir este item?",

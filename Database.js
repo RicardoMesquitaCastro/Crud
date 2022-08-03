@@ -13,8 +13,8 @@ async function saveItem(listItem, id){
  
     return AsyncStorage.setItem('items', JSON.stringify(savedItems));
 }
-function getItems(){
-    return AsyncStorage.getItem('items')
+function getItems(){ //pega todos os itens do AsyncStorage e retorna em forma de array através de uma promise.
+    return AsyncStorage.getItem('items') //adicionada no module.exports
             .then(response => {
                 if(response)
                     return Promise.resolve(JSON.parse(response));
