@@ -11,19 +11,19 @@ function AppTab() {
         <NavigationContainer>
             <Navigator
                 screenOptions={{
-                    tabBarActiveTintColor: "#32264d",
-                    tabBarInactiveTintColor: "#c1bccc",
-                    tabBarActiveBackgroundColor: "#ebebf5",
-                    tabBarInactiveBackgroundColor: "#fafafc",
-                    tabBarLabelStyle: {
+                    tabBarActiveTintColor: "#32264d", //cor da fonte quando aba selecionada;
+                    tabBarInactiveTintColor: "#c1bccc", //cor da fonte quando aba não-selecionada;
+                    tabBarActiveBackgroundColor: "#ebebf5", //cor de fundo da aba quando selecionada;
+                    tabBarInactiveBackgroundColor: "#fafafc", //cor de fundo da aba quando não-selecionada;
+                    tabBarLabelStyle: { // estilos da label da aba (mexi no posicionamento e tamanho);
                         fontSize: 13,
-                        position: 'absolute',
+                        position: 'absolute', 
                         top: 15,
                         bottom: 0,
                         left: 0,
                         right: 0
                     },
-                    tabBarIconStyle: { display: "none" }
+                    tabBarIconStyle: { display: "none" } // estilos do ícone da aba (escondi o mesmo);
                 }}
             >
                 <Screen name="AppList" component={AppList}
